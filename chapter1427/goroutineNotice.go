@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 //Empty empty interface for sem
@@ -23,7 +22,6 @@ func main() {
 	}
 	for i, ix := range data {
 		go func(i int, ix float64) {
-			time.Sleep(2 * 1e9)
 			res[i] = ix * float64(5)
 			sem <- empty
 		}(i, ix)
